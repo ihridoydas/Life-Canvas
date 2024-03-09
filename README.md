@@ -3,19 +3,19 @@
 Life Canvas: An innovative Android app empowering users to curate their life's tasks and goals through intuitive organization, priority settings, and seamless synchronization across devices.
 
 ## What Features or Page use for this Project
-1.**Intro Screen**: where user can see the intro of the app.
-2.**Login and Register Screen**: where user can login or register in the app.
-3.**Home Screen**: where user can see the home screen of the app.
-4.**Add Task Screen**: where user can add the task in the app.
-5.**Category Screen**: where user can see the category of the task.
-6.**Calendar Screen**: where user can see the calendar of the task.
-7.**Profile Screen**: where user can see the profile of the app.
-8.**Focus Mode Screen**: where user can see the focus mode of the app.
-9.**Settings Screen**: where user can see the settings of the app.
-10.**Notification Screen**: where user can see the notification of the app.
-11.**Search Screen**: where user can search the task in the app.
-12.**Task Screen**: where user can see the task of the app.
-13.**Task Detail Screen**: where user can see the task detail of the app.
+1. **Intro Screen**: where user can see the intro of the app.
+2. **Login and Register Screen**: where user can login or register in the app.
+3. **Home Screen**: where user can see the home screen of the app.
+4. **Add Task Screen**: where user can add the task in the app.
+5. **Category Screen**: where user can see the category of the task.
+6. **Calendar Screen**: where user can see the calendar of the task.
+7. **Profile Screen**: where user can see the profile of the app.
+8. **Focus Mode Screen**: where user can see the focus mode of the app.
+9. **Settings Screen**: where user can see the settings of the app.
+10. **Notification Screen**: where user can see the notification of the app.
+11. **Search Screen**: where user can search the task in the app.
+12. **Task Screen**: where user can see the task of the app.
+13. **Task Detail Screen**: where user can see the task detail of the app.
 
 ## We are implementing new features in future updates
 1.**Server Driven UI**: where user can see the server driven UI of the app."
