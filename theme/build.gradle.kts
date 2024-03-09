@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "template.theme"
+    namespace = "info.hridoydas.lifecanvas.theme"
 
     buildFeatures {
         compose = true

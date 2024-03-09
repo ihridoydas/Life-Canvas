@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "template.navigation"
+    namespace = "info.hridoydas.lifecanvas.navigation"
 
     buildFeatures {
         compose = true

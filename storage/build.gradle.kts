@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "template.storage"
+    namespace = "info.hridoydas.lifecanvas.storage"
 
     buildFeatures {
         compose = true
