@@ -1,38 +1,27 @@
-# Base Template Android App
+# Life Canvas Android App
 
-Kickstart your Android app development with this GitHub template repository. Designed by [Hridoy Chandra Das](https://github.com/ihridoydas), it provides essential tools without imposing code-writing opinions.
+Life Canvas: An innovative Android app empowering users to curate their life's tasks and goals through intuitive organization, priority settings, and seamless synchronization across devices.
 
-## Why This Template?
+## What Features or Page use for this Project
+1.**Intro Screen**: where user can see the intro of the app.
+2.**Login and Register Screen**: where user can login or register in the app.
+3.**Home Screen**: where user can see the home screen of the app.
+4.**Add Task Screen**: where user can add the task in the app.
+5.**Category Screen**: where user can see the category of the task.
+6.**Calendar Screen**: where user can see the calendar of the task.
+7.**Profile Screen**: where user can see the profile of the app.
+8.**Focus Mode Screen**: where user can see the focus mode of the app.
+9.**Settings Screen**: where user can see the settings of the app.
+10.**Notification Screen**: where user can see the notification of the app.
+11.**Search Screen**: where user can search the task in the app.
+12.**Task Screen**: where user can see the task of the app.
+13.**Task Detail Screen**: where user can see the task detail of the app.
 
-- **Freedom to Choose:** No opinions on code structure or architecture. Developers decide on their own.
-- **Opinionated Tooling:** Configured dependency management, git hooks, code formatting, and static analysis for enhanced development.
+## We are implementing new features in future updates
+1.**Server Driven UI**: where user can see the server driven UI of the app."
+2.**AR View**: where user can see the AR view of the app.
 
-Inspired by [AndroidAppTemplate](https://github.com/AdamMc331/AndroidAppTemplate).
-
-## Getting Started
-
-1. Click "Use this template" to create a repository under your account.
-    ```dsl
-   
-   templateName             : "template",
-   templateAppId            : "template.app.id",
-   templateMaterialThemeName: "TemplateTheme",
-   newTemplateName          : "Project", [Enter your project name here]
-   newTemplateAppId         : "domain.yourname.app", [Enter your project package name here]
-   newMaterialThemeName     : "MyMaterialTheme", [Enter your project theme name here]
-   useHiltDependencies      : true,
-   useRoomDependencies      : true,
-   useRetrofitDependencies  : true,
-   usePaparazziDependencies : true,
-   
-   ```
-2. Customize by adjusting [setup.gradle](buildscripts/setup.gradle) and running `./gradlew renameAllModules`.
-
-- Japanese [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_jp.md) 🇯🇵.
-- Bangla [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_bd.md) 🇧🇩.
-- Hindi [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_in.md) 🇮🇳.
-
-## What's Included
+## What's Included in this Project
 
 Explore third-party dependencies and documentation in [/documentation](/documentation). Notable inclusions:
 

@@ -14,10 +14,10 @@ plugins {
 
 android {
     compileSdk = libs.versions.compileSdk.get().toInt()
-    namespace = "template"
+    namespace = "info.hridoydas.lifecanvas"
 
     defaultConfig {
-        applicationId = "template.app.id"
+        applicationId = "info.hridoydas.lifecanvas"
         versionCode = 1
         versionName = "1.0"
     }

@@ -5,7 +5,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "template"
+rootProject.name = "Life-Canvas"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":theme")

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "template.common"
+    namespace = "info.hridoydas.lifecanvas.common"
 
     buildFeatures {
         compose = true
