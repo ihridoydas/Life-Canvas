@@ -27,4 +27,4 @@ package info.hridoydas.lifecanvas.common
 const val DURATION_MILLIS = 500
 const val VALUES_X = 0.4f
 const val VALUES_Y = 0.0f
-const val DURATION = 500L
+const val DURATION = 200L
