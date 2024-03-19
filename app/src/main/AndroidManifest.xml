@@ -10,13 +10,13 @@
         android:label="${appLabel}"
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
+        android:windowSoftInputMode="adjustResize"
         android:theme="@style/Theme.CustomSplashScreenTheme">
 
         <activity
             android:name="info.hridoydas.lifecanvas.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
