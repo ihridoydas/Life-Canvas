@@ -22,11 +22,13 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.navigation
+package info.hridoydas.lifecanvas.common
 
 sealed class ScreenDestinations(val route: String) {
     // Destinations
     data object HomeScreen : ScreenDestinations("home_screen")
+
+    data object OnBoarding : ScreenDestinations("on_boarding")
 
     data object ViewScreen : ScreenDestinations("view_screen")
 }

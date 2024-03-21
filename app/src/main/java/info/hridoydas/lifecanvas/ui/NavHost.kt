@@ -29,7 +29,8 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import info.hridoydas.lifecanvas.navigation.ScreenDestinations
+import info.hridoydas.lifecanvas.common.ScreenDestinations
+import info.hridoydas.lifecanvas.common.introOnBoarding.OnBoardingScreen
 import info.hridoydas.lifecanvas.navigation.canGoBack
 import info.hridoydas.lifecanvas.navigation.navigateTo
 import info.hridoydas.lifecanvas.navigation.screen
@@ -40,12 +41,16 @@ import info.hridoydas.lifecanvas.screens.ViewScreen
 @Composable
 fun MainAnimationNavHost(
     navController: NavHostController,
-    startDestination: String = ScreenDestinations.HomeScreen.route,
+    startDestination: String = ScreenDestinations.OnBoarding.route,
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
+        screen(ScreenDestinations.OnBoarding.route) {
+            OnBoardingScreen(navController = navController) {}
+        }
+
         screen(ScreenDestinations.HomeScreen.route) {
             HomeScreen(navController = navController)
         }
