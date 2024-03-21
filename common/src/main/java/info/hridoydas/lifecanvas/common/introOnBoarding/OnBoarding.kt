@@ -1,5 +1,28 @@
+/*
+* MIT License
+*
+* Copyright (c) 2024 Hridoy Chandra Das
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+*/
 package info.hridoydas.lifecanvas.common.introOnBoarding
-
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -48,12 +71,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import info.hridoydas.lifecanvas.common.ScreenDestinations
 import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
-
+import info.hridoydas.lifecanvas.theme.buttonBackgroundColor
+import info.hridoydas.lifecanvas.theme.buttonSecondColor
+import info.hridoydas.lifecanvas.theme.indicatorColor
 
 @Composable
 fun BottomSection(
     navController: NavHostController,
-    //onBoardingViewModel : OnBoardingViewModel,
+    // onBoardingViewModel : OnBoardingViewModel,
     size: Int,
     index: Int,
     onBackClicked: () -> Unit,
@@ -64,8 +89,7 @@ fun BottomSection(
             .fillMaxWidth()
             .padding(12.dp),
     ) {
-
-        //back button
+        // back button
         Button(
             onClick = if (index != 0) {
                 onBackClicked
@@ -84,13 +108,13 @@ fun BottomSection(
                 .height(45.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
-                contentColor = Color(0xFF6F6F6F),
+                contentColor = buttonSecondColor,
             ),
         ) {
             Text(text = "BACK")
         }
 
-        //next button
+        // next button
         Button(
             onClick = if (index != 2) {
                 onNextClicked
@@ -109,7 +133,7 @@ fun BottomSection(
                 .height(48.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF8875FF),
+                containerColor = buttonBackgroundColor,
             ),
         ) {
             Text(
@@ -121,9 +145,7 @@ fun BottomSection(
                 modifier = Modifier.padding(5.dp),
             )
         }
-
     }
-
 }
 
 @Composable
@@ -136,13 +158,16 @@ fun IndicatorSection(
             .fillMaxWidth()
             .padding(12.dp),
     ) {
-        //indicators
+        // indicators
         Indicators(size = size, index = index)
     }
 }
 
 @Composable
-fun BoxScope.Indicators(size: Int, index: Int) {
+fun BoxScope.Indicators(
+    size: Int,
+    index: Int,
+) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -154,12 +179,12 @@ fun BoxScope.Indicators(size: Int, index: Int) {
     }
 }
 
-
 @Composable
 fun Indicator(isSelected: Boolean) {
     val width = animateDpAsState(
         targetValue = if (isSelected) 25.dp else 10.dp,
-        animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy), label = "",
+        animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy),
+        label = "",
     )
     Column(
         modifier = Modifier,
@@ -172,13 +197,14 @@ fun Indicator(isSelected: Boolean) {
                 .width(width.value)
                 .clip(CircleShape)
                 .background(
-                    if (isSelected) Color.White
-                    else Color(0XFFAFAFAF),
+                    if (isSelected) {
+                        Color.White
+                    } else {
+                        indicatorColor
+                    },
                 ),
         )
     }
-
-
 }
 
 @Composable
@@ -224,7 +250,6 @@ fun OnBoardingItem(
     }
 }
 
-
 @Composable
 fun TopSection(navController: NavController) {
     Box(
@@ -232,8 +257,7 @@ fun TopSection(navController: NavController) {
             .fillMaxWidth()
             .padding(12.dp),
     ) {
-
-        //back button
+        // back button
         IconButton(
             onClick = { },
             modifier = Modifier.align(Alignment.CenterStart),
@@ -241,7 +265,7 @@ fun TopSection(navController: NavController) {
             Icon(Icons.Outlined.KeyboardArrowLeft, null)
         }
 
-        //skip button
+        // skip button
         TextButton(
             onClick = {
 //                navController?.navigate(ScreenDestinations.StartShowCaseScreen.route) {
@@ -258,18 +282,14 @@ fun TopSection(navController: NavController) {
                 color = MaterialTheme.colorScheme.onBackground,
             )
         }
-
     }
 }
-
 
 @Preview
 @Composable
 private fun BottomScreenPreview() {
     LifeCanvasTheme {
         BottomSection(navController = rememberNavController(), size = 3, index = 1, onBackClicked = { /*TODO*/ }) {
-
         }
     }
-
 }

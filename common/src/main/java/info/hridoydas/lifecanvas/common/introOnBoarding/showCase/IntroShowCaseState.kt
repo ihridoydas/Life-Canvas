@@ -1,3 +1,27 @@
+/*
+* MIT License
+*
+* Copyright (c) 2024 Hridoy Chandra Das
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+*/
 package info.hridoydas.lifecanvas.common.introOnBoarding.showCase
 
 import androidx.compose.foundation.layout.BoxScope
@@ -20,9 +44,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
  * @param initialIndex the initial value for [IntroShowCaseState.currentTargetIndex]
  */
 @Composable
-fun rememberIntroShowCaseState(
-    initialIndex: Int = 0,
-): IntroShowCaseState {
+fun rememberIntroShowCaseState(initialIndex: Int = 0): IntroShowCaseState {
     return remember {
         IntroShowCaseState(
             initialIndex = initialIndex,
@@ -38,19 +60,19 @@ fun Modifier.introShowCaseTarget(
     index: Int,
     style: ShowcaseStyle = ShowcaseStyle.Default,
     content: @Composable BoxScope.() -> Unit,
-): Modifier = onGloballyPositioned { coordinates ->
-    state.targets[index] = IntroShowcaseTargets(
-        index = index,
-        coordinates = coordinates,
-        style = style,
-        content = content
-    )
-}
+): Modifier =
+    onGloballyPositioned { coordinates ->
+        state.targets[index] = IntroShowcaseTargets(
+            index = index,
+            coordinates = coordinates,
+            style = style,
+            content = content,
+        )
+    }
 
 class IntroShowCaseState internal constructor(
     initialIndex: Int,
 ) {
-
     internal var targets = mutableStateMapOf<Int, IntroShowcaseTargets>()
 
     var currentTargetIndex by mutableStateOf(initialIndex)

@@ -1,3 +1,27 @@
+/*
+* MIT License
+*
+* Copyright (c) 2024 Hridoy Chandra Das
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+*/
 package info.hridoydas.lifecanvas.common.introOnBoarding.showCase
 
 import androidx.compose.animation.core.Animatable
@@ -42,10 +66,15 @@ import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
+const val TARGET_RADIUS = 40f
+const val DURATION_MILLIS = 1000L
+const val ANIMATION_DURATION2 = 2000
+const val OUTER_ANIMATABLE_INIT_VALUE = 0.6f
+
 @Composable
 fun IntroShowCase(
     state: IntroShowCaseState,
-    onShowCaseCompleted: () -> Unit
+    onShowCaseCompleted: () -> Unit,
 ) {
     state.currentTarget?.let {
         TargetContent(it) {
@@ -57,11 +86,10 @@ fun IntroShowCase(
     }
 }
 
-
 @Composable
 fun TargetContent(
     target: IntroShowcaseTargets,
-    onShowcaseCompleted: () -> Unit
+    onShowcaseCompleted: () -> Unit,
 ) {
     val screenHeight = LocalConfiguration.current.screenHeightDp
     val targetCords = target.coordinates
@@ -76,10 +104,10 @@ fun TargetContent(
 
     val maxDimension =
         max(targetCords.size.width.absoluteValue, targetCords.size.height.absoluteValue)
-    val targetRadius = maxDimension / 2f + 40f
+    val targetRadius = maxDimension / 2f + TARGET_RADIUS
 
     val animationSpec = infiniteRepeatable<Float>(
-        animation = tween(2000, easing = FastOutLinearInEasing),
+        animation = tween(ANIMATION_DURATION2, easing = FastOutLinearInEasing),
         repeatMode = RepeatMode.Restart,
     )
 
@@ -91,15 +119,15 @@ fun TargetContent(
         mutableStateOf(0f)
     }
 
-    val outerAnimatable = remember { Animatable(0.6f) }
+    val outerAnimatable = remember { Animatable(OUTER_ANIMATABLE_INIT_VALUE) }
 
     val animatables = listOf(
         remember { Animatable(0f) },
-        remember { Animatable(0f) }
+        remember { Animatable(0f) },
     )
 
     LaunchedEffect(target) {
-        outerAnimatable.snapTo(0.6f)
+        outerAnimatable.snapTo(OUTER_ANIMATABLE_INIT_VALUE)
 
         outerAnimatable.animateTo(
             targetValue = 1f,
@@ -111,11 +139,11 @@ fun TargetContent(
     }
 
     animatables.forEachIndexed { index, animatable ->
-        val  DURATION_MILLIS = 1000L
         LaunchedEffect(animatable) {
             delay(index * DURATION_MILLIS)
             animatable.animateTo(
-                targetValue = 1f, animationSpec = animationSpec
+                targetValue = 1f,
+                animationSpec = animationSpec,
             )
         }
     }
@@ -132,14 +160,13 @@ fun TargetContent(
                         }
                     }
                 }
-                .graphicsLayer(alpha = 0.99f)
+                .graphicsLayer(alpha = 0.99f),
         ) {
-
             drawCircle(
                 color = target.style.backgroundColor,
                 center = outerOffset,
                 radius = outerRadius * outerAnimatable.value,
-                alpha = target.style.backgroundAlpha
+                alpha = target.style.backgroundAlpha,
             )
 
             dys.forEach { dy ->
@@ -147,7 +174,7 @@ fun TargetContent(
                     color = target.style.targetCircleColor,
                     radius = maxDimension * dy * 2f,
                     center = targetRect.center,
-                    alpha = 1 - dy
+                    alpha = 1 - dy,
                 )
             }
 
@@ -155,7 +182,7 @@ fun TargetContent(
                 color = target.style.targetCircleColor,
                 radius = targetRadius,
                 center = targetRect.center,
-                blendMode = BlendMode.Xor
+                blendMode = BlendMode.Xor,
             )
         }
 
@@ -175,15 +202,13 @@ fun TargetContent(
     }
 }
 
-
 @Composable
 fun ShowCaseText(
     currentTarget: IntroShowcaseTargets,
     boundsInParent: Rect,
     targetRadius: Float,
-    updateContentCoordinates: (LayoutCoordinates) -> Unit
+    updateContentCoordinates: (LayoutCoordinates) -> Unit,
 ) {
-
     var contentOffsetY by remember {
         mutableStateOf(0f)
     }
@@ -191,9 +216,11 @@ fun ShowCaseText(
     Box(
         content = currentTarget.content,
         modifier = Modifier
-            .offset(y = with(LocalDensity.current) {
-                contentOffsetY.toDp()
-            })
+            .offset(
+                y = with(LocalDensity.current) {
+                    contentOffsetY.toDp()
+                },
+            )
             .onGloballyPositioned {
                 updateContentCoordinates(it)
                 val contentHeight = it.size.height
@@ -207,15 +234,14 @@ fun ShowCaseText(
                     boundsInParent.center.y + targetRadius
                 }
             }
-            .padding(16.dp)
+            .padding(16.dp),
     )
-
 }
 
 fun getOuterCircleCenter(
     targetRect: Rect,
     contentRect: Rect,
-    targetRadius: Float
+    targetRadius: Float,
 ): Offset {
     val outerCenterX: Float
     val outerCenterY: Float
@@ -226,16 +252,19 @@ fun getOuterCircleCenter(
 
     val left = min(
         contentRect.left,
-        targetRect.left - targetRadius
+        targetRect.left - targetRadius,
     )
     val right = max(
         contentRect.right,
-        targetRect.right + targetRadius
+        targetRect.right + targetRadius,
     )
 
     val centerY =
-        if (onTop) targetRect.center.y - targetRadius - contentHeight
-        else targetRect.center.y + targetRadius + contentHeight
+        if (onTop) {
+            targetRect.center.y - targetRadius - contentHeight
+        } else {
+            targetRect.center.y + targetRadius + contentHeight
+        }
 
     outerCenterY = centerY
     outerCenterX = (left + right) / 2
@@ -243,8 +272,11 @@ fun getOuterCircleCenter(
     return Offset(outerCenterX, outerCenterY)
 }
 
-fun getOuterRect(contentRect: Rect, targetRect: Rect, isTargetInGutter: Boolean): Rect {
-
+fun getOuterRect(
+    contentRect: Rect,
+    targetRect: Rect,
+    isTargetInGutter: Boolean,
+): Rect {
     val topLeftX = min(contentRect.topLeft.x, targetRect.topLeft.x)
     val topLeftY = min(contentRect.topLeft.y, targetRect.topLeft.y)
     val bottomRightX = max(contentRect.bottomRight.x, targetRect.bottomRight.x)
@@ -255,8 +287,8 @@ fun getOuterRect(contentRect: Rect, targetRect: Rect, isTargetInGutter: Boolean)
 
 fun getOuterRadius(outerRect: Rect): Float {
     val d = sqrt(
-        outerRect.height.toDouble().pow(2.0)
-                + outerRect.width.toDouble().pow(2.0)
+        outerRect.height.toDouble().pow(2.0) +
+            outerRect.width.toDouble().pow(2.0),
     ).toFloat()
 
     return (d / 2f)
@@ -266,27 +298,25 @@ data class IntroShowcaseTargets(
     val index: Int,
     val coordinates: LayoutCoordinates,
     val style: ShowcaseStyle = ShowcaseStyle.Default,
-    val content: @Composable BoxScope.() -> Unit
+    val content: @Composable BoxScope.() -> Unit,
 )
 
 class ShowcaseStyle(
     val backgroundColor: Color = Color.Black,
-    /*@FloatRange(from = 0.0, to = 1.0)*/
+    // @FloatRange(from = 0.0, to = 1.0)
     val backgroundAlpha: Float = DEFAULT_BACKGROUND_RADIUS,
-    val targetCircleColor: Color = Color.White
+    val targetCircleColor: Color = Color.White,
 ) {
-
     fun copy(
         backgroundColor: Color = this.backgroundColor,
-        /*@FloatRange(from = 0.0, to = 1.0)*/
+        // @FloatRange(from = 0.0, to = 1.0)
         backgroundAlpha: Float = this.backgroundAlpha,
-        targetCircleColor: Color = this.targetCircleColor
+        targetCircleColor: Color = this.targetCircleColor,
     ): ShowcaseStyle {
-
         return ShowcaseStyle(
             backgroundColor = backgroundColor,
             backgroundAlpha = backgroundAlpha,
-            targetCircleColor = targetCircleColor
+            targetCircleColor = targetCircleColor,
         )
     }
 

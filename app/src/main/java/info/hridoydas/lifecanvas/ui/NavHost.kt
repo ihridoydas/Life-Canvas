@@ -48,7 +48,7 @@ fun MainAnimationNavHost(
         startDestination = startDestination,
     ) {
         screen(ScreenDestinations.OnBoarding.route) {
-            OnBoardingScreen(navController = navController) {}
+            OnBoardingScreen(navController = navController)
         }
 
         screen(ScreenDestinations.HomeScreen.route) {
