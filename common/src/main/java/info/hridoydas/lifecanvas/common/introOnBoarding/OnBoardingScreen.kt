@@ -172,7 +172,6 @@ fun OnBoardingScreen(navController: NavHostController) {
                     BottomSection(
                         navController = navController,
                         // onBoardingViewModel = onBoardingViewModel,
-                        size = items.size,
                         index = state.currentPage,
                         onBackClicked = {
                             if (state.currentPage > 0) { // Check if currentPage is not the first page

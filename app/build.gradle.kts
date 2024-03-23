@@ -153,6 +153,7 @@ dependencies {
     implementation(libs.timber)
     //Module
     implementation(projects.common)
+    implementation(projects.features.auth)
     implementation(projects.navigation)
     implementation(projects.storage)
     implementation(projects.theme)
