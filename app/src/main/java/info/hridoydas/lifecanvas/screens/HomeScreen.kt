@@ -39,8 +39,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import info.hridoydas.lifecanvas.common.ScreenDestinations
-import info.hridoydas.lifecanvas.common.components.TemplatePreview
+import info.hridoydas.lifecanvas.ScreenDestinations
+import info.hridoydas.lifecanvas.components.LifeCanvasPreview
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -79,7 +79,7 @@ fun HomeScreen(navController: NavController) {
     }
 }
 
-@TemplatePreview
+@LifeCanvasPreview
 @Composable
 fun HomeScreenPreview() {
     HomeScreen(navController = rememberNavController())

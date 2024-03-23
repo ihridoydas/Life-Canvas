@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.introOnBoarding
+package info.hridoydas.lifecanvas.introOnBoarding
 
 import info.hridoydas.lifecanvas.common.R
 

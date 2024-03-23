@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.introOnBoarding.showCase
+package info.hridoydas.lifecanvas.introOnBoarding.showCase
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutLinearInEasing

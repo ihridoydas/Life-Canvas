@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.introOnBoarding.showCase
+package info.hridoydas.lifecanvas.introOnBoarding.showCase
 
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable

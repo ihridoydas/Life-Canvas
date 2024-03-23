@@ -22,37 +22,38 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.components
+package info.hridoydas.lifecanvas.theme.components
 
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import info.hridoydas.lifecanvas.components.LifeCanvasPreview
+import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
 
 @Composable
-fun AppBar(
-    title: String,
-    navIcon: ImageVector? = null,
-    onNav: () -> Unit = {},
-) {
-    TopAppBar(
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            titleContentColor = MaterialTheme.colorScheme.primary,
-        ),
-        title = {
-            Text(text = title)
-        },
-        navigationIcon = {
-            navIcon?.let {
-                IconButton(onClick = { onNav() }) {
-                    Icon(navIcon, contentDescription = "Nav Icon")
-                }
-            }
-        },
-    )
+fun FullScreenCircularProgressIndicator() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
+        contentAlignment = Alignment.Center,
+    ) {
+        CircularProgressIndicator()
+    }
+}
+
+@LifeCanvasPreview
+@Composable
+fun FullScreenCircularProgressIndicatorPreview() {
+    LifeCanvasTheme {
+        Surface {
+            FullScreenCircularProgressIndicator()
+        }
+    }
 }

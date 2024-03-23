@@ -22,37 +22,33 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.components
+package info.hridoydas.lifecanvas.splashScreen
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
-@Composable
-fun FullScreenCircularProgressIndicator() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-        contentAlignment = Alignment.Center,
-    ) {
-        CircularProgressIndicator()
+@HiltViewModel
+class SplashViewModel :
+// @Inject constructor(
+//    @ApplicationContext context: Context,
+//   // private val prefDataStore: PrefDataStore)
+    ViewModel() {
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading = _isLoading.asStateFlow()
+
+    companion object {
+        const val DELAY_DURATION = 3000L
     }
-}
 
-@TemplatePreview
-@Composable
-fun FullScreenCircularProgressIndicatorPreview() {
-    LifeCanvasTheme {
-        Surface {
-            FullScreenCircularProgressIndicator()
+    init {
+        viewModelScope.launch {
+            delay(DELAY_DURATION)
+            _isLoading.value = true
         }
     }
 }

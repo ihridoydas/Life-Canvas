@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.introOnBoarding
+package info.hridoydas.lifecanvas.introOnBoarding
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -40,9 +40,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -52,10 +50,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import info.hridoydas.lifecanvas.ScreenDestinations
 import info.hridoydas.lifecanvas.common.R
-import info.hridoydas.lifecanvas.common.ScreenDestinations
-import info.hridoydas.lifecanvas.common.introOnBoarding.showCase.IntroShowCaseScaffold
-import info.hridoydas.lifecanvas.common.introOnBoarding.showCase.ShowcaseStyle
+import info.hridoydas.lifecanvas.introOnBoarding.showCase.IntroShowCaseScaffold
+import info.hridoydas.lifecanvas.introOnBoarding.showCase.ShowcaseStyle
 import info.hridoydas.lifecanvas.theme.backgroundColor
 import info.hridoydas.lifecanvas.theme.introBackgroundColor
 import kotlinx.coroutines.launch

@@ -22,33 +22,44 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.theme.splashScreen
+package info.hridoydas.lifecanvas.utils
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
+import android.content.Context
+import android.os.Build
+import android.widget.Toast
+import androidx.annotation.StringRes
 
-@HiltViewModel
-class SplashViewModel :
-// @Inject constructor(
-//    @ApplicationContext context: Context,
-//   // private val prefDataStore: PrefDataStore)
-    ViewModel() {
-    private val _isLoading = MutableStateFlow(false)
-    val isLoading = _isLoading.asStateFlow()
+fun Context.toast(
+    message: String,
+    onToastDisplayChange: (Boolean) -> Unit,
+) {
+    showToast(message, onToastDisplayChange)
+}
 
-    companion object {
-        const val DELAY_DURATION = 3000L
-    }
+fun Context.toast(
+    @StringRes message: Int,
+    onToastDisplayChange: (Boolean) -> Unit,
+) {
+    showToast(getString(message), onToastDisplayChange)
+}
 
-    init {
-        viewModelScope.launch {
-            delay(DELAY_DURATION)
-            _isLoading.value = true
+private fun Context.showToast(
+    message: String,
+    onToastDisplayChange: (Boolean) -> Unit,
+) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).also {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            it.addCallback(object : Toast.Callback() {
+                override fun onToastHidden() {
+                    super.onToastHidden()
+                    onToastDisplayChange(false)
+                }
+
+                override fun onToastShown() {
+                    super.onToastShown()
+                    onToastDisplayChange(true)
+                }
+            })
         }
-    }
+    }.show()
 }

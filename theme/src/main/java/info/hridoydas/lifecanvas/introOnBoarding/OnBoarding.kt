@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.introOnBoarding
+package info.hridoydas.lifecanvas.introOnBoarding
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -63,7 +63,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import info.hridoydas.lifecanvas.common.ScreenDestinations
+import info.hridoydas.lifecanvas.ScreenDestinations
 import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
 import info.hridoydas.lifecanvas.theme.buttonBackgroundColor
 import info.hridoydas.lifecanvas.theme.buttonSecondColor

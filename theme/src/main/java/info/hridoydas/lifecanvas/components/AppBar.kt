@@ -22,44 +22,37 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.utils
+package info.hridoydas.lifecanvas.components
 
-import android.content.Context
-import android.os.Build
-import android.widget.Toast
-import androidx.annotation.StringRes
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.vector.ImageVector
 
-fun Context.toast(
-    message: String,
-    onToastDisplayChange: (Boolean) -> Unit,
+@Composable
+fun AppBar(
+    title: String? = null,
+    navIcon: ImageVector? = null,
+    onNav: () -> Unit = {},
 ) {
-    showToast(message, onToastDisplayChange)
-}
-
-fun Context.toast(
-    @StringRes message: Int,
-    onToastDisplayChange: (Boolean) -> Unit,
-) {
-    showToast(getString(message), onToastDisplayChange)
-}
-
-private fun Context.showToast(
-    message: String,
-    onToastDisplayChange: (Boolean) -> Unit,
-) {
-    Toast.makeText(this, message, Toast.LENGTH_SHORT).also {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            it.addCallback(object : Toast.Callback() {
-                override fun onToastHidden() {
-                    super.onToastHidden()
-                    onToastDisplayChange(false)
+    TopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.background,
+            titleContentColor = MaterialTheme.colorScheme.primary,
+        ),
+        title = {
+            Text(text = title ?: "")
+        },
+        navigationIcon = {
+            navIcon?.let {
+                IconButton(onClick = { onNav() }) {
+                    Icon(navIcon, contentDescription = "Nav Icon")
                 }
-
-                override fun onToastShown() {
-                    super.onToastShown()
-                    onToastDisplayChange(true)
-                }
-            })
-        }
-    }.show()
+            }
+        },
+    )
 }

@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.utils
+package info.hridoydas.lifecanvas.utils
 
 import android.os.Build
 import android.util.Log

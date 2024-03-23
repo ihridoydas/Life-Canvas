@@ -22,20 +22,13 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.components
+package info.hridoydas.lifecanvas
 
-import android.content.res.Configuration.UI_MODE_NIGHT_NO
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import androidx.compose.ui.tooling.preview.Preview
+sealed class ScreenDestinations(val route: String) {
+    // Destinations
+    data object HomeScreen : ScreenDestinations("home_screen")
 
-@Preview(
-    name = "Preview Day",
-    showBackground = true,
-    uiMode = UI_MODE_NIGHT_NO,
-)
-@Preview(
-    name = "Preview Night",
-    showBackground = true,
-    uiMode = UI_MODE_NIGHT_YES,
-)
-annotation class TemplatePreview
+    data object OnBoarding : ScreenDestinations("on_boarding")
+
+    data object ViewScreen : ScreenDestinations("view_screen")
+}

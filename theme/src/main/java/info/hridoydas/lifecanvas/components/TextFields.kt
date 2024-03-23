@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.common.components
+package info.hridoydas.lifecanvas.theme.components
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
@@ -52,6 +52,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import info.hridoydas.lifecanvas.common.R
+import info.hridoydas.lifecanvas.components.LifeCanvasPreview
 import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
 
 @Composable
@@ -126,7 +127,7 @@ fun AppTextField(
     }
 }
 
-@TemplatePreview
+@LifeCanvasPreview
 @Composable
 fun AppTextFieldPreview() {
     LifeCanvasTheme {
@@ -150,7 +151,7 @@ fun AppTextFieldPreview() {
     }
 }
 
-@TemplatePreview
+@LifeCanvasPreview
 @Composable
 fun LoginScreenPreview() {
     LifeCanvasTheme {

@@ -13,7 +13,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.theme)
     // Gradle
     implementation(platform(libs.compose.bom))
     // UI
