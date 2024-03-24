@@ -29,7 +29,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import info.hridoydas.lifecanvas.auth.login.LoginScreen
-import info.hridoydas.lifecanvas.splashScreen.SplashScreen
+import info.hridoydas.lifecanvas.auth.welcomeScreen.WelcomeScreen
 
 const val AUTH_SCREEN = "auth"
 
@@ -52,12 +52,12 @@ fun NavGraphBuilder.authNavGraph(
     ) {
         composable(AuthScreen.Splash.route) {
             // Splash Screen
-            SplashScreen()
-            // WelcomeScreen()
-            LoginScreen()
+            // SplashScreen()
+            WelcomeScreen()
         }
 
         composable(AuthScreen.Login.route) {
+            LoginScreen()
         }
 
         composable(AuthScreen.SignUp.route) {
