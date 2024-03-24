@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.androidx.hilt.compose.navigation)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.runtime)
 
     // Test
     debugImplementation(platform(libs.compose.bom))

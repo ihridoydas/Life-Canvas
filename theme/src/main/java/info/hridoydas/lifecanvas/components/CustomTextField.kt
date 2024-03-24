@@ -26,10 +26,12 @@ package info.hridoydas.lifecanvas.components
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -58,8 +60,8 @@ import info.hridoydas.lifecanvas.theme.TEXT_FIELD_BORDER_COLOR
 @Composable
 fun LifeCanvasTextField(
     textFieldTitle: String,
+    modifier: Modifier = Modifier,
     value: String,
-    @StringRes label: Int? = null,
     hint: String = "",
     onValueChanged: (value: String) -> Unit,
     isPasswordField: Boolean = false,
@@ -72,21 +74,26 @@ fun LifeCanvasTextField(
     colors: TextFieldColors,
 ) {
     val focusManager = LocalFocusManager.current
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth(),
+        verticalArrangement = Arrangement.Center,
+    ) {
         Text(
             text = textFieldTitle,
+            modifier = modifier.padding(bottom = 5.dp),
             style = MaterialTheme.typography.bodySmall,
             textAlign = MaterialTheme.typography.bodySmall.textAlign,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             fontSize = MaterialTheme.typography.bodySmall.fontSize,
         )
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .height(80.dp),
         ) {
             OutlinedTextField(
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxWidth()
                     .clickable {
                         if (isClickOnly) {
@@ -103,7 +110,7 @@ fun LifeCanvasTextField(
                 supportingText = {
                     if (error != null) {
                         Text(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = modifier.fillMaxWidth(),
                             text = stringResource(error),
                             color = MaterialTheme.colorScheme.error,
                         )
@@ -113,11 +120,6 @@ fun LifeCanvasTextField(
                     PasswordVisualTransformation()
                 } else {
                     VisualTransformation.None
-                },
-                label = {
-                    if (label != null) {
-                        Text(text = stringResource(label))
-                    }
                 },
                 placeholder = { Text(text = hint) },
                 trailingIcon = {

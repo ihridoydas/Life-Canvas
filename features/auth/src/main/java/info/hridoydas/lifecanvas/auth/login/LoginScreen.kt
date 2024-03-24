@@ -58,6 +58,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import info.hridoydas.lifecanvas.components.AppBar
 import info.hridoydas.lifecanvas.components.CustomButton
 import info.hridoydas.lifecanvas.components.LifeCanvasPreview
@@ -83,7 +84,20 @@ const val LC_SCREEN_BOTTOM_SECTION_WEIGHT = 4f
  * @see CustomButton
  */
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(viewModel: LoginViewModel) {
+    val uiState = viewModel.uiState.collectAsStateWithLifecycle()
+    Login(
+        onState = uiState.value,
+        onEvent = { viewModel.onEvent(it) },
+    )
+}
+
+@Composable
+fun Login(
+    modifier: Modifier = Modifier,
+    onState: LoginUIState,
+    onEvent: (LoginUIEvent) -> Unit,
+) {
     Scaffold(
         topBar = {
             AppBar(
@@ -120,10 +134,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                         Spacer(modifier = modifier.padding(top = 30.dp))
 
                         LifeCanvasTextField(
-                            textFieldTitle = "Username",
-                            value = "",
-                            hint = "Jon Doe",
-                            onValueChanged = { },
+                            textFieldTitle = "Email",
+                            value = onState.email,
+                            hint = "jondoe@gmail.com",
+                            onValueChanged = {
+                                onEvent(LoginUIEvent.OnEmailChanged(it))
+                            },
                             imeAction = ImeAction.Next,
                             colors = OutlinedTextFieldDefaults.colors(
                                 disabledPlaceholderColor = Color(TEXT_FIELD_BORDER_COLOR),
@@ -133,14 +149,18 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                                 focusedContainerColor = Color(TEXT_FIELD_CONTAINER_COLOR),
                                 unfocusedContainerColor = Color(TEXT_FIELD_CONTAINER_COLOR),
                                 focusedBorderColor = Color(TEXT_FIELD_BORDER_COLOR),
+                                disabledBorderColor = Color(TEXT_FIELD_BORDER_COLOR),
                                 errorBorderColor = MaterialTheme.colorScheme.error,
                             ),
                         )
                         LifeCanvasTextField(
                             textFieldTitle = "Password",
-                            value = "",
+                            value = onState.password,
                             hint = "Password",
-                            onValueChanged = { },
+                            onValueChanged = {
+                                onEvent(LoginUIEvent.OnPasswordChanged(it))
+                            },
+                            isPasswordField = true,
                             imeAction = ImeAction.Next,
                             colors = OutlinedTextFieldDefaults.colors(
                                 disabledPlaceholderColor = Color(TEXT_FIELD_BORDER_COLOR),
@@ -277,7 +297,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
 fun WelcomeScreenPreview() {
     LifeCanvasTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
-            LoginScreen()
+            Login(onState = LoginUIState(), onEvent = {})
         }
     }
 }

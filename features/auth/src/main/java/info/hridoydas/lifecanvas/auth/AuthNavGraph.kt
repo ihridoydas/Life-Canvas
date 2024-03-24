@@ -24,12 +24,12 @@
 */
 package info.hridoydas.lifecanvas.auth
 
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import info.hridoydas.lifecanvas.auth.login.LoginScreen
-import info.hridoydas.lifecanvas.auth.welcomeScreen.WelcomeScreen
 
 const val AUTH_SCREEN = "auth"
 
@@ -53,11 +53,14 @@ fun NavGraphBuilder.authNavGraph(
         composable(AuthScreen.Splash.route) {
             // Splash Screen
             // SplashScreen()
-            WelcomeScreen()
+            // WelcomeScreen()
+            LoginScreen(
+                viewModel = viewModel(),
+            )
         }
 
         composable(AuthScreen.Login.route) {
-            LoginScreen()
+            // LoginScreen()
         }
 
         composable(AuthScreen.SignUp.route) {
