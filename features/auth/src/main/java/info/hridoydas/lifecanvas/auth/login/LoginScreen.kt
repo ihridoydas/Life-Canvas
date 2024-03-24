@@ -153,6 +153,23 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                                 errorBorderColor = MaterialTheme.colorScheme.error,
                             ),
                         )
+                        Box(
+                            modifier = modifier
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.TopEnd,
+                        ) {
+                            AutoSizeText(
+                                text = "If you forgot password? Forgot Password ",
+                                modifier = modifier,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                fontSize = 10.sp,
+                                textAlign = TextAlign.Center,
+                                overflow = TextOverflow.Ellipsis,
+                                maxLines = 1,
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
                         Spacer(modifier = modifier.padding(10.dp))
 
                         CustomButton(
