@@ -28,6 +28,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import info.hridoydas.lifecanvas.auth.login.LoginScreen
 import info.hridoydas.lifecanvas.splashScreen.SplashScreen
 
 const val AUTH_SCREEN = "auth"
@@ -52,6 +53,8 @@ fun NavGraphBuilder.authNavGraph(
         composable(AuthScreen.Splash.route) {
             // Splash Screen
             SplashScreen()
+            // WelcomeScreen()
+            LoginScreen()
         }
 
         composable(AuthScreen.Login.route) {
