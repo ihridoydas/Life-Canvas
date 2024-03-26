@@ -1,9 +1,9 @@
 plugins {
     id("java-library")
+    alias(libs.plugins.kotlin.jvm)
 }
 
 dependencies {
-    //implementation(projects.storage)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.logging)

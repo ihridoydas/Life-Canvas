@@ -155,7 +155,6 @@ dependencies {
     implementation(projects.common)
     implementation(projects.features.auth)
     implementation(projects.features.auth.data)
-    implementation(projects.features.auth.domain)
     implementation(projects.navigation)
     implementation(projects.network)
     implementation(projects.storage)
