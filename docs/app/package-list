@@ -1,19 +1,28 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:template.screens////PointingToDeclaration/app/template.screens/index.html
-$dokka.location:template.screens//HomeScreen/#androidx.navigation.NavController/PointingToDeclaration/app/template.screens/-home-screen.html
-$dokka.location:template.screens//HomeScreenPreview/#/PointingToDeclaration/app/template.screens/-home-screen-preview.html
-$dokka.location:template.screens//ViewScreen/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/template.screens/-view-screen.html
-$dokka.location:template.ui////PointingToDeclaration/app/template.ui/index.html
-$dokka.location:template.ui//MainAnimationNavHost/#androidx.navigation.NavHostController#kotlin.String/PointingToDeclaration/app/template.ui/-main-animation-nav-host.html
-$dokka.location:template////PointingToDeclaration/app/template/index.html
-$dokka.location:template//Greeting/#kotlin.String/PointingToDeclaration/app/template/-greeting.html
-$dokka.location:template/BaseApp///PointingToDeclaration/app/template/-base-app/index.html
-$dokka.location:template/BaseApp/BaseApp/#/PointingToDeclaration/app/template/-base-app/-base-app.html
-$dokka.location:template/MainActivity.Companion///PointingToDeclaration/app/template/-main-activity/-companion/index.html
-$dokka.location:template/MainActivity///PointingToDeclaration/app/template/-main-activity/index.html
-$dokka.location:template/MainActivity/MainActivity/#/PointingToDeclaration/app/template/-main-activity/-main-activity.html
-template
-template.screens
-template.ui
+$dokka.location:info.hridoydas.lifecanvas.di////PointingToDeclaration/app/info.hridoydas.lifecanvas.di/index.html
+$dokka.location:info.hridoydas.lifecanvas.di/AuthModule///PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/index.html
+$dokka.location:info.hridoydas.lifecanvas.di/AuthModule/AuthModule/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/-auth-module.html
+$dokka.location:info.hridoydas.lifecanvas.di/AuthModule/provideAuthRepository/#[Error type: Unresolved type for AuthRepositoryImpl]/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/provide-auth-repository.html
+$dokka.location:info.hridoydas.lifecanvas.di/NetworkModule///PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/index.html
+$dokka.location:info.hridoydas.lifecanvas.di/NetworkModule/NetworkModule/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/-network-module.html
+$dokka.location:info.hridoydas.lifecanvas.di/NetworkModule/provideHttpClient/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/provide-http-client.html
+$dokka.location:info.hridoydas.lifecanvas.di/NetworkModule/provideRequestHandler/#io.ktor.client.HttpClient/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/provide-request-handler.html
+$dokka.location:info.hridoydas.lifecanvas.screens////PointingToDeclaration/app/info.hridoydas.lifecanvas.screens/index.html
+$dokka.location:info.hridoydas.lifecanvas.screens//HomeScreen/#androidx.navigation.NavController/PointingToDeclaration/app/info.hridoydas.lifecanvas.screens/-home-screen.html
+$dokka.location:info.hridoydas.lifecanvas.screens//HomeScreenPreview/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.screens/-home-screen-preview.html
+$dokka.location:info.hridoydas.lifecanvas.screens//ViewScreen/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/info.hridoydas.lifecanvas.screens/-view-screen.html
+$dokka.location:info.hridoydas.lifecanvas.ui////PointingToDeclaration/app/info.hridoydas.lifecanvas.ui/index.html
+$dokka.location:info.hridoydas.lifecanvas.ui//MainAnimationNavHost/#androidx.navigation.NavHostController#kotlin.String/PointingToDeclaration/app/info.hridoydas.lifecanvas.ui/-main-animation-nav-host.html
+$dokka.location:info.hridoydas.lifecanvas////PointingToDeclaration/app/info.hridoydas.lifecanvas/index.html
+$dokka.location:info.hridoydas.lifecanvas//Greeting/#kotlin.String/PointingToDeclaration/app/info.hridoydas.lifecanvas/-greeting.html
+$dokka.location:info.hridoydas.lifecanvas/BaseApp///PointingToDeclaration/app/info.hridoydas.lifecanvas/-base-app/index.html
+$dokka.location:info.hridoydas.lifecanvas/BaseApp/BaseApp/#/PointingToDeclaration/app/info.hridoydas.lifecanvas/-base-app/-base-app.html
+$dokka.location:info.hridoydas.lifecanvas/MainActivity.Companion///PointingToDeclaration/app/info.hridoydas.lifecanvas/-main-activity/-companion/index.html
+$dokka.location:info.hridoydas.lifecanvas/MainActivity///PointingToDeclaration/app/info.hridoydas.lifecanvas/-main-activity/index.html
+$dokka.location:info.hridoydas.lifecanvas/MainActivity/MainActivity/#/PointingToDeclaration/app/info.hridoydas.lifecanvas/-main-activity/-main-activity.html
+info.hridoydas.lifecanvas
+info.hridoydas.lifecanvas.di
+info.hridoydas.lifecanvas.screens
+info.hridoydas.lifecanvas.ui
 
