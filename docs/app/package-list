@@ -3,7 +3,7 @@ $dokka.linkExtension:html
 $dokka.location:info.hridoydas.lifecanvas.di////PointingToDeclaration/app/info.hridoydas.lifecanvas.di/index.html
 $dokka.location:info.hridoydas.lifecanvas.di/AuthModule///PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/index.html
 $dokka.location:info.hridoydas.lifecanvas.di/AuthModule/AuthModule/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/-auth-module.html
-$dokka.location:info.hridoydas.lifecanvas.di/AuthModule/provideAuthRepository/#[Error type: Unresolved type for AuthRepositoryImpl]/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/provide-auth-repository.html
+$dokka.location:info.hridoydas.lifecanvas.di/AuthModule/provideAuthRepository/#info.hridoydas.lifecanvas.auth.data.AuthRepositoryImpl/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-auth-module/provide-auth-repository.html
 $dokka.location:info.hridoydas.lifecanvas.di/NetworkModule///PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/index.html
 $dokka.location:info.hridoydas.lifecanvas.di/NetworkModule/NetworkModule/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/-network-module.html
 $dokka.location:info.hridoydas.lifecanvas.di/NetworkModule/provideHttpClient/#/PointingToDeclaration/app/info.hridoydas.lifecanvas.di/-network-module/provide-http-client.html

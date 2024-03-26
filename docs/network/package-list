@@ -1,0 +1,45 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:info.hridoydas.lifecanvas.network////PointingToDeclaration/network/info.hridoydas.lifecanvas.network/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/DefaultError///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/DefaultError/DefaultError/#kotlin.String/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/-default-error.html
+$dokka.location:info.hridoydas.lifecanvas.network/DefaultError/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/message.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder/LifeCanvasHttpClientBuilder/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/-life-canvas-http-client-builder.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder/build/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/build.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder/host/#kotlin.String/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/host.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder/port/#kotlin.Int/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/port.html
+$dokka.location:info.hridoydas.lifecanvas.network/LifeCanvasHttpClientBuilder/protocol/#io.ktor.http.URLProtocol/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-life-canvas-http-client-builder/protocol.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.NotFoundException///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-not-found-exception/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.NotFoundException/NotFoundException/#kotlin.String#kotlin.Throwable/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-not-found-exception/-not-found-exception.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.NotFoundException/cause/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-not-found-exception/cause.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.NotFoundException/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-not-found-exception/message.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnauthorizedException///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unauthorized-exception/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnauthorizedException/UnauthorizedException/#kotlin.String#kotlin.Throwable/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unauthorized-exception/-unauthorized-exception.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnauthorizedException/cause/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unauthorized-exception/cause.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnauthorizedException/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unauthorized-exception/message.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnknownException///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unknown-exception/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnknownException/UnknownException/#kotlin.String#kotlin.Throwable/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unknown-exception/-unknown-exception.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnknownException/cause/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unknown-exception/cause.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException.UnknownException/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/-unknown-exception/message.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkException///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-exception/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Error///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-error/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Error/Error/#kotlin.String?#java.lang.Exception/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-error/-error.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Error/body/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-error/body.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Error/exception/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-error/exception.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Success///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-success/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Success/Success/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-success/-success.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult.Success/result/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/-success/result.html
+$dokka.location:info.hridoydas.lifecanvas.network/NetworkResult///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-network-result/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler/RequestHandler/#io.ktor.client.HttpClient/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/-request-handler.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler/executeRequest/#io.ktor.http.HttpMethod#kotlin.collections.List[kotlin.Any]#TypeParam(bounds=[kotlin.Any?])?#kotlin.collections.Map[kotlin.String,kotlin.Any]?/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/execute-request.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler/get/#kotlin.collections.List[kotlin.Any]#kotlin.collections.Map[kotlin.String,kotlin.Any]?/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/get.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler/httpClient/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/http-client.html
+$dokka.location:info.hridoydas.lifecanvas.network/RequestHandler/post/#kotlin.collections.List[kotlin.Any]#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-request-handler/post.html
+$dokka.location:info.hridoydas.lifecanvas.network/Response///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-response/index.html
+$dokka.location:info.hridoydas.lifecanvas.network/Response/Response/#TypeParam(bounds=[kotlin.Any?])#kotlin.String?/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-response/-response.html
+$dokka.location:info.hridoydas.lifecanvas.network/Response/data/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-response/data.html
+$dokka.location:info.hridoydas.lifecanvas.network/Response/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-response/message.html
+info.hridoydas.lifecanvas.network
+

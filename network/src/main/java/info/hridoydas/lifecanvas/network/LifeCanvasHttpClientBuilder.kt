@@ -41,6 +41,10 @@ import io.ktor.http.URLProtocol
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
+const val KEEP_ALIVE_TIME = 5000
+const val CONNECT_TIMEOUT = 5000
+const val CONNECTION_ATTEMPTS = 3
+
 class LifeCanvasHttpClientBuilder {
     private lateinit var protocol: URLProtocol
     private lateinit var host: String
@@ -58,9 +62,9 @@ class LifeCanvasHttpClientBuilder {
 
             engine {
                 endpoint {
-                    keepAliveTime = 5000
-                    connectTimeout = 5000
-                    connectAttempts = 3
+                    keepAliveTime = KEEP_ALIVE_TIME.toLong()
+                    connectTimeout = CONNECT_TIMEOUT.toLong()
+                    connectAttempts = CONNECTION_ATTEMPTS
                 }
             }
 

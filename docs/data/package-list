@@ -1,0 +1,22 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:info.hridoydas.lifecanvas.auth.data////PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/AuthRepository///PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-auth-repository/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/AuthRepository/login/#info.hridoydas.lifecanvas.auth.data.UserLoginRequest/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-auth-repository/login.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/AuthRepositoryImpl///PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-auth-repository-impl/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/AuthRepositoryImpl/AuthRepositoryImpl/#info.hridoydas.lifecanvas.network.RequestHandler/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-auth-repository-impl/-auth-repository-impl.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/AuthRepositoryImpl/login/#info.hridoydas.lifecanvas.auth.data.UserLoginRequest/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-auth-repository-impl/login.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel///PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/UserApiModel/#kotlin.String?#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.Int/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/-user-api-model.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/authToken/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/auth-token.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/avatar/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/avatar.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/createdAt/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/created-at.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/email/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/email.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/fullName/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/full-name.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserApiModel/id/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-api-model/id.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserLoginRequest///PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-login-request/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserLoginRequest/UserLoginRequest/#kotlin.String#kotlin.String/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-login-request/-user-login-request.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserLoginRequest/email/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-login-request/email.html
+$dokka.location:info.hridoydas.lifecanvas.auth.data/UserLoginRequest/password/#/PointingToDeclaration/data/info.hridoydas.lifecanvas.auth.data/-user-login-request/password.html
+info.hridoydas.lifecanvas.auth.data
+

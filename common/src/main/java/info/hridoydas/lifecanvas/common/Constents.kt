@@ -28,3 +28,5 @@ const val DURATION_MILLIS = 500
 const val VALUES_X = 0.4f
 const val VALUES_Y = 0.0f
 const val DURATION = 200L
+
+const val DEFAULT_PORT = 8080
