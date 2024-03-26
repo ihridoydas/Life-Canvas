@@ -100,13 +100,13 @@ android {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
-            buildConfigField("String", "Template_HOST", "\"192.168.10.34\"")
+            buildConfigField("String", "LifeCanvas_HOST", "\"192.168.10.34\"")
         }
         getByName("release") {
             isMinifyEnabled = true
             isDebuggable = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-            buildConfigField("String", "Template_HOST", "\"not given\"")
+            buildConfigField("String", "LifeCanvas_HOST", "\"not given\"")
         }
     }
 
@@ -154,7 +154,10 @@ dependencies {
     //Module
     implementation(projects.common)
     implementation(projects.features.auth)
+    implementation(projects.features.auth.data)
+    implementation(projects.features.auth.domain)
     implementation(projects.navigation)
+    implementation(projects.network)
     implementation(projects.storage)
     implementation(projects.theme)
 

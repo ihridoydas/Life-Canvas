@@ -19,6 +19,7 @@ plugins {
     id(libs.plugins.sortDependencies.get().pluginId).version(libs.versions.sortDependencies).apply(false)
     alias(libs.plugins.kotlinter) apply false
     id(libs.plugins.dokka.get().pluginId).version(libs.versions.dokkaVersion).apply(false)
+    alias(libs.plugins.kotlin.jvm) apply false
 }
 
 buildscript {
