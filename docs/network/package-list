@@ -1,6 +1,9 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:info.hridoydas.lifecanvas.network////PointingToDeclaration/network/info.hridoydas.lifecanvas.network/index.html
+$dokka.location:info.hridoydas.lifecanvas.network//CONNECTION_ATTEMPTS/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-c-o-n-n-e-c-t-i-o-n_-a-t-t-e-m-p-t-s.html
+$dokka.location:info.hridoydas.lifecanvas.network//CONNECT_TIMEOUT/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-c-o-n-n-e-c-t_-t-i-m-e-o-u-t.html
+$dokka.location:info.hridoydas.lifecanvas.network//KEEP_ALIVE_TIME/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-k-e-e-p_-a-l-i-v-e_-t-i-m-e.html
 $dokka.location:info.hridoydas.lifecanvas.network/DefaultError///PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/index.html
 $dokka.location:info.hridoydas.lifecanvas.network/DefaultError/DefaultError/#kotlin.String/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/-default-error.html
 $dokka.location:info.hridoydas.lifecanvas.network/DefaultError/message/#/PointingToDeclaration/network/info.hridoydas.lifecanvas.network/-default-error/message.html
