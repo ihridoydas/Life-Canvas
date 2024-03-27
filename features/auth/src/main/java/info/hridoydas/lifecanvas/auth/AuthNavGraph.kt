@@ -24,12 +24,15 @@
 */
 package info.hridoydas.lifecanvas.auth
 
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import androidx.navigation.navigation
 import info.hridoydas.lifecanvas.auth.login.LoginScreen
+import info.hridoydas.lifecanvas.splashScreen.SplashScreen
 
 const val AUTH_SCREEN = "auth"
 
@@ -44,7 +47,7 @@ sealed class AuthScreen(val route: String) {
 
 fun NavGraphBuilder.authNavGraph(
     onAuthSuccess: () -> Unit,
-    navController: NavController,
+    navController: NavHostController,
 ) {
     navigation(
         startDestination = AuthScreen.Splash.route,
@@ -52,15 +55,15 @@ fun NavGraphBuilder.authNavGraph(
     ) {
         composable(AuthScreen.Splash.route) {
             // Splash Screen
-            // SplashScreen()
+            SplashScreen()
             // WelcomeScreen()
-            LoginScreen(
-                viewModel = viewModel(),
-            )
+            navController.navigate(AuthScreen.Login.route)
         }
 
         composable(AuthScreen.Login.route) {
-            // LoginScreen()
+            LoginScreen(
+                viewModel = hiltViewModel(),
+            )
         }
 
         composable(AuthScreen.SignUp.route) {

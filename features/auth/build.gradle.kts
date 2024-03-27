@@ -4,6 +4,7 @@ plugins {
     id(libs.plugins.dokka.get().pluginId)
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
+    kotlin("kapt")
 }
 
 android {
@@ -37,6 +38,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.runtime)
+    implementation(projects.features.auth.domain)
+    implementation(projects.features.auth.data)
 
     // Test
     debugImplementation(platform(libs.compose.bom))
@@ -47,7 +50,8 @@ dependencies {
 
     annotationProcessor(libs.androidx.room.compiler)
     // Hilt
-    annotationProcessor(libs.hilt.compiler)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 
@@ -55,6 +59,5 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.compose.ui.test.junit)
-    androidTestImplementation(libs.hilt.android.testing)
 
 }

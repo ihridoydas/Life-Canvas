@@ -195,7 +195,9 @@ fun Login(
                         CustomButton(
                             text = "LOGIN",
                             size = DpSize(120.dp, 48.dp),
-                            onClick = {},
+                            onClick = {
+                                onEvent(LoginUIEvent.Login)
+                            },
                             isFillMaxWidth = true,
                             containerColor = buttonBackgroundColor,
                             contentColor = Color.White,

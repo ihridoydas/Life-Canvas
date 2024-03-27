@@ -25,24 +25,44 @@
 package info.hridoydas.lifecanvas.auth.login
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import info.hridoydas.lifecanvas.auth.domain.LoginUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(LoginUIState())
-    val uiState: StateFlow<LoginUIState> = _uiState
+@HiltViewModel
+class LoginViewModel
+    @Inject
+    constructor(
+        private val loginUseCase: LoginUseCase,
+    ) : ViewModel() {
+        private val _uiState = MutableStateFlow(LoginUIState())
+        val uiState: StateFlow<LoginUIState> = _uiState
 
-    fun onEvent(uiEvent: LoginUIEvent) {
-        when (uiEvent) {
-            is LoginUIEvent.OnEmailChanged -> {
-                _uiState.value = _uiState.value.copy(email = uiEvent.email)
-            }
-            is LoginUIEvent.OnPasswordChanged -> {
-                _uiState.value = _uiState.value.copy(password = uiEvent.password)
-            }
-            else -> {
-                // Handle other events
+        fun onEvent(uiEvent: LoginUIEvent) {
+            when (uiEvent) {
+                is LoginUIEvent.OnEmailChanged -> {
+                    _uiState.value = _uiState.value.copy(email = uiEvent.email)
+                }
+
+                is LoginUIEvent.OnPasswordChanged -> {
+                    _uiState.value = _uiState.value.copy(password = uiEvent.password)
+                }
+
+                is LoginUIEvent.Login -> {
+                    login()
+                }
+
+                else -> {
+                }
             }
         }
+
+        fun login() =
+            viewModelScope.launch {
+                loginUseCase.invoke(_uiState.value.email, _uiState.value.password)
+            }
     }
-}

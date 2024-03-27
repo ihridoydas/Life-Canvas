@@ -6,10 +6,11 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlinter.get().pluginId)
     alias(libs.plugins.paparazzi) apply false
-    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.hilt)
     id(libs.plugins.sortDependencies.get().pluginId)
     id(libs.plugins.dokka.get().pluginId)
     id(libs.plugins.protobuf.get().pluginId)
+    kotlin("kapt")
 }
 
 android {
@@ -120,7 +121,7 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     ksp(libs.square.moshi.kotlin.codegen)
 
-    kspAndroidTest(libs.hilt.android.compiler)
+    kspAndroidTest(libs.hilt.compiler)
 
     // Gradle
     implementation(platform(libs.compose.bom))
@@ -143,7 +144,8 @@ dependencies {
     implementation(libs.compose.ui.tooling)
     // Storage
     implementation(libs.datastore)
-    implementation(libs.hilt.android)
+    // Hilt
+    implementation(libs.hilt)
     implementation(libs.ktor.client.core)
     implementation(libs.protobuf.javaLite)
     implementation(libs.protobuf.kotlinLite)
@@ -168,8 +170,8 @@ dependencies {
     debugImplementation(libs.square.leakcanary)
 
     annotationProcessor(libs.androidx.room.compiler)
-    // Hilt
-    annotationProcessor(libs.hilt.compiler)
+
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 
@@ -177,7 +179,6 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.compose.ui.test.junit)
-    androidTestImplementation(libs.hilt.android.testing)
 }
 
 protobuf {
