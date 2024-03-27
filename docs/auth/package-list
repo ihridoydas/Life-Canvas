@@ -23,7 +23,8 @@ $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginUIState/error/#/Pointi
 $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginUIState/isLoading/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-u-i-state/is-loading.html
 $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginUIState/password/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-u-i-state/password.html
 $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/index.html
-$dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel/LoginViewModel/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/-login-view-model.html
+$dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel/LoginViewModel/#info.hridoydas.lifecanvas.auth.domain.LoginUseCase/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/-login-view-model.html
+$dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel/login/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/login.html
 $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel/onEvent/#info.hridoydas.lifecanvas.auth.login.LoginUIEvent/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/on-event.html
 $dokka.location:info.hridoydas.lifecanvas.auth.login/LoginViewModel/uiState/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.login/-login-view-model/ui-state.html
 $dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen////PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/index.html
@@ -33,7 +34,7 @@ $dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WelcomeScreen/#and
 $dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WelcomeScreenPreview/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/-welcome-screen-preview.html
 $dokka.location:info.hridoydas.lifecanvas.auth////PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/index.html
 $dokka.location:info.hridoydas.lifecanvas.auth//AUTH_SCREEN/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-a-u-t-h_-s-c-r-e-e-n.html
-$dokka.location:info.hridoydas.lifecanvas.auth//authNavGraph/androidx.navigation.NavGraphBuilder#kotlin.Function0[kotlin.Unit]#androidx.navigation.NavController/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/auth-nav-graph.html
+$dokka.location:info.hridoydas.lifecanvas.auth//authNavGraph/androidx.navigation.NavGraphBuilder#kotlin.Function0[kotlin.Unit]#androidx.navigation.NavHostController/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/auth-nav-graph.html
 $dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.Login///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-login/index.html
 $dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.SignUp///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-sign-up/index.html
 $dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.Splash///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-splash/index.html

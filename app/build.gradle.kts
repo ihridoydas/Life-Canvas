@@ -10,7 +10,6 @@ plugins {
     id(libs.plugins.sortDependencies.get().pluginId)
     id(libs.plugins.dokka.get().pluginId)
     id(libs.plugins.protobuf.get().pluginId)
-    kotlin("kapt")
 }
 
 android {
@@ -119,6 +118,7 @@ android {
 
 dependencies {
     ksp(libs.androidx.room.compiler)
+    ksp(libs.hilt.compiler)
     ksp(libs.square.moshi.kotlin.codegen)
 
     kspAndroidTest(libs.hilt.compiler)
@@ -168,10 +168,6 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     // Others
     debugImplementation(libs.square.leakcanary)
-
-    annotationProcessor(libs.androidx.room.compiler)
-
-    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 

@@ -3,8 +3,7 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.dokka.get().pluginId)
     alias(libs.plugins.hilt) apply false
-    alias(libs.plugins.ksp) apply false
-    kotlin("kapt")
+    id(libs.plugins.ksp.get().pluginId)
 }
 
 android {
@@ -48,10 +47,10 @@ dependencies {
     // Others
     debugImplementation(libs.square.leakcanary)
 
-    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
     // Hilt
     implementation(libs.hilt)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 
