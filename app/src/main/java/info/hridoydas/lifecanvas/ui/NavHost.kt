@@ -52,7 +52,7 @@ fun MainAnimationNavHost(
         authNavGraph(
             navController = navController,
             onAuthSuccess = {
-//                navController.navigateTo(ScreenDestinations.HomeScreen.route)
+                navController.navigateTo(ScreenDestinations.HomeScreen.route)
             },
         )
 

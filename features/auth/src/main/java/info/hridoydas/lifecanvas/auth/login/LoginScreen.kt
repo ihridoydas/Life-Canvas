@@ -196,7 +196,7 @@ fun Login(
                             text = "LOGIN",
                             size = DpSize(120.dp, 48.dp),
                             onClick = {
-                                onEvent(LoginUIEvent.Login)
+                                onEvent.invoke(LoginUIEvent.Login)
                             },
                             isFillMaxWidth = true,
                             containerColor = buttonBackgroundColor,

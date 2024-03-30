@@ -1,3 +1,4 @@
+import java.net.InetAddress
 import java.util.Properties
 
 plugins {
@@ -96,11 +97,12 @@ android {
         }
     }
     buildTypes {
+        val ipAddress = InetAddress.getLocalHost().hostAddress
         getByName("debug") {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
-            buildConfigField("String", "LifeCanvas_HOST", "\"192.168.10.34\"")
+            buildConfigField("String", "LifeCanvas_HOST", "\"192.168.1.8\"")
         }
         getByName("release") {
             isMinifyEnabled = true
@@ -157,6 +159,7 @@ dependencies {
     implementation(projects.common)
     implementation(projects.features.auth)
     implementation(projects.features.auth.data)
+    implementation(projects.features.auth.domain)
     implementation(projects.navigation)
     implementation(projects.network)
     implementation(projects.storage)
