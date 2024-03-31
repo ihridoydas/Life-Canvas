@@ -28,12 +28,14 @@ import info.hridoydas.lifecanvas.auth.data.AuthRepository
 import info.hridoydas.lifecanvas.auth.data.UserLoginRequest
 import info.hridoydas.lifecanvas.network.NetworkException
 import info.hridoydas.lifecanvas.network.NetworkResult
+import info.hridoydas.lifecanvas.storage.SessionHandler
 import javax.inject.Inject
 
 class LoginUseCase
     @Inject
     constructor(
         private val repository: AuthRepository,
+        private val sessionHandler: SessionHandler,
         private val mapper: UserMapper,
     ) {
         suspend fun invoke(
@@ -43,7 +45,10 @@ class LoginUseCase
             val request = UserLoginRequest(email, password)
             return when (val result = repository.login(request)) {
                 is NetworkResult.Error -> result.toResourceError()
-                is NetworkResult.Success -> Resource.Success(mapper.map(result.result.data))
+                is NetworkResult.Success -> {
+                    sessionHandler.setCurrentUser(result.result.data.id,result.result.data.authToken)
+                    Resource.Success(mapper.map(result.result.data))
+                }
             }
         }
     }

@@ -2,8 +2,8 @@ plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.dokka.get().pluginId)
-    alias(libs.plugins.hilt) apply false
     id(libs.plugins.ksp.get().pluginId)
+    alias(libs.plugins.hilt)
 }
 
 android {

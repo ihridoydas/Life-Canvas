@@ -24,14 +24,20 @@
 */
 package info.hridoydas.lifecanvas.di
 
+import android.content.Context
+import androidx.datastore.core.DataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import info.hridoydas.lifecanvas.BuildConfig
+import info.hridoydas.lifecanvas.DataStoreSessionHandler
 import info.hridoydas.lifecanvas.common.DEFAULT_PORT
 import info.hridoydas.lifecanvas.network.LifeCanvasHttpClientBuilder
 import info.hridoydas.lifecanvas.network.RequestHandler
+import info.hridoydas.lifecanvas.storage.SessionHandler
+import info.hridoydas.lifecanvas.storage.User
 import io.ktor.client.HttpClient
 import io.ktor.http.URLProtocol
 
@@ -39,8 +45,12 @@ import io.ktor.http.URLProtocol
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
     @Provides
-    fun provideHttpClient(): HttpClient =
-        LifeCanvasHttpClientBuilder()
+    fun provideSessionHandler(dataStoreSessionHandler: DataStoreSessionHandler): SessionHandler = dataStoreSessionHandler
+
+
+    @Provides
+    fun provideHttpClient(sessionHandler: SessionHandler): HttpClient =
+        LifeCanvasHttpClientBuilder(sessionHandler)
             .protocol(URLProtocol.HTTP)
             .host(BuildConfig.LifeCanvas_HOST)
             .port(DEFAULT_PORT)

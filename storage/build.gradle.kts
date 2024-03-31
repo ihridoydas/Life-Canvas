@@ -1,19 +1,8 @@
 plugins {
-    id(libs.plugins.androidLibrary.get().pluginId)
-    id(libs.plugins.kotlin.android.get().pluginId)
-    id(libs.plugins.dokka.get().pluginId)
+    id("java-library")
+    alias(libs.plugins.kotlin.jvm)
 }
 
-android {
-    namespace = "info.hridoydas.lifecanvas.storage"
-
-    buildFeatures {
-        compose = true
-    }
+dependencies {
+    implementation(libs.kotlin.coroutines)
 }
-
-  dependencies {
-      implementation(projects.common)
-      implementation(libs.kotlin.coroutines)
-
-  }

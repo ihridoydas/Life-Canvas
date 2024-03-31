@@ -22,33 +22,47 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.splashScreen
+package info.hridoydas.lifecanvas.auth.splash
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import info.hridoydas.lifecanvas.auth.domain.Resource
+import info.hridoydas.lifecanvas.auth.domain.UserDataUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
+
 
 @HiltViewModel
-class SplashViewModel :
-// @Inject constructor(
-//    @ApplicationContext context: Context,
-//   // private val prefDataStore: PrefDataStore)
-    ViewModel() {
+class SplashViewModel @Inject constructor(
+    private val splashUseCase: UserDataUseCase,
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow<SplashUIState>(SplashUIState.Splash())
+    val uiState: StateFlow<SplashUIState> = _uiState
+
     private val _isLoading = MutableStateFlow(false)
     val isLoading = _isLoading.asStateFlow()
 
     companion object {
-        const val DELAY_DURATION = 3000L
+        const val DELAY_DURATION = 2000L
     }
 
     init {
-        viewModelScope.launch {
-            delay(DELAY_DURATION)
-            _isLoading.value = true
+        isLoggedIn()
+    }
+
+    private fun isLoggedIn() = viewModelScope.launch {
+        //delay(DELAY_DURATION)
+        _isLoading.value = true
+        _uiState.value = SplashUIState.Splash(isLoading = true)
+        when (splashUseCase.invoke()) {
+            is Resource.Error -> _uiState.value = SplashUIState.Splash(moveLogin = true)
+            is Resource.Success -> _uiState.value = SplashUIState.Authenticated
         }
     }
 }

@@ -24,6 +24,7 @@
 */
 package info.hridoydas.lifecanvas.network
 
+import info.hridoydas.lifecanvas.storage.SessionHandler
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.engine.cio.endpoint
@@ -39,13 +40,17 @@ import io.ktor.client.request.header
 import io.ktor.http.HttpHeaders
 import io.ktor.http.URLProtocol
 import io.ktor.serialization.kotlinx.json.json
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 
 const val KEEP_ALIVE_TIME = 5000
 const val CONNECT_TIMEOUT = 5000
 const val CONNECTION_ATTEMPTS = 3
 
-class LifeCanvasHttpClientBuilder {
+class LifeCanvasHttpClientBuilder(
+    private val sessionHandler: SessionHandler
+) {
     private lateinit var protocol: URLProtocol
     private lateinit var host: String
     private var port: Int? = null
@@ -91,11 +96,13 @@ class LifeCanvasHttpClientBuilder {
             install(Auth) {
                 bearer {
                     loadTokens {
-                        BearerTokens("", "")
+                        runBlocking {
+                            BearerTokens(sessionHandler.getCurrentUser().first().authKey, "")
+                        }
                     }
-                    refreshTokens {
-                        BearerTokens("", "")
-                    }
+//                    refreshTokens {
+//                        BearerTokens("", "")
+//                    }
                 }
             }
 

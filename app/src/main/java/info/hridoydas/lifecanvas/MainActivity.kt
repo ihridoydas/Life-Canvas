@@ -45,10 +45,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import info.hridoydas.lifecanvas.auth.splash.SplashViewModel
 import info.hridoydas.lifecanvas.common.DURATION
 import info.hridoydas.lifecanvas.common.VALUES_X
 import info.hridoydas.lifecanvas.common.VALUES_Y
-import info.hridoydas.lifecanvas.splashScreen.SplashViewModel
 import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
 import info.hridoydas.lifecanvas.ui.MainAnimationNavHost
 import info.hridoydas.lifecanvas.utils.RootUtil

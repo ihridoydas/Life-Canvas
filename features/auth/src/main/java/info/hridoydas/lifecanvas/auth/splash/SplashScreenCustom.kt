@@ -22,28 +22,61 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.splashScreen
+package info.hridoydas.lifecanvas.auth.splash
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
 import info.hridoydas.lifecanvas.components.LifeCanvasPreview
 import info.hridoydas.lifecanvas.theme.LifeCanvasTheme
 import info.hridoydas.lifecanvas.theme.R
 
 @Composable
-fun SplashScreen() {
-    Splash()
+fun SplashScreenCustom(
+    splashViewModel: SplashViewModel,
+    navController: NavController,
+    onAuthSuccess: () -> Unit,
+) {
+    val splashUIState = splashViewModel.uiState.collectAsStateWithLifecycle()
+
+    when (val state = splashUIState.value) {
+        SplashUIState.Authenticated -> {
+            LaunchedEffect(Unit) {
+                onAuthSuccess()
+            }
+        }
+        is SplashUIState.Splash -> {
+            if (state.moveLogin){
+                LaunchedEffect(Unit) {
+                    navController.navigate(AuthScreen.Login.route){
+                        popUpTo(AuthScreen.Login.route){
+                            inclusive = true
+                        }
+                    }
+                }
+
+            }else{
+                Splash(state = state)
+            }
+        }
+    }
 }
 
 @Composable
-fun Splash() {
+fun Splash(state: SplashUIState.Splash) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -53,6 +86,10 @@ fun Splash() {
             painter = painterResource(id = R.drawable.anim_logo),
             contentDescription = "logo",
         )
+        Spacer(modifier = Modifier.size(12.dp))
+        if (state.isLoading) {
+            CircularProgressIndicator()
+        }
     }
 }
 
@@ -61,7 +98,7 @@ fun Splash() {
 fun SplashScreenPreview() {
     LifeCanvasTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
-            Splash()
+            Splash(SplashUIState.Splash())
         }
     }
 }

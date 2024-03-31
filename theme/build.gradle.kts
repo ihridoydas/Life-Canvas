@@ -29,6 +29,8 @@ dependencies {
 
     implementation(libs.androidx.hilt.compose.navigation)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(projects.common)
+    implementation(projects.features.auth.domain)
 
 }

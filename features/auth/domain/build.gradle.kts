@@ -8,6 +8,7 @@ plugins {
 dependencies {
     implementation(projects.features.auth.data)
     implementation(projects.network)
+    implementation(projects.storage)
     implementation(libs.ktor.serialization)
     implementation(libs.javax.inject)
 }

@@ -22,51 +22,53 @@
 * SOFTWARE.
 *
 */
-package info.hridoydas.lifecanvas.auth
+package info.hridoydas.lifecanvas.auth.splash
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
 import androidx.navigation.navigation
 import info.hridoydas.lifecanvas.auth.login.LoginScreen
-import info.hridoydas.lifecanvas.splashScreen.SplashScreen
+import info.hridoydas.lifecanvas.navigation.screen
 
 const val AUTH_SCREEN = "auth"
 
 sealed class AuthScreen(val route: String) {
     // Destinations
-    data object Splash : AuthScreen("${AUTH_SCREEN}/splash")
+    data object Splash : AuthScreen("$AUTH_SCREEN/splash")
 
-    data object Login : AuthScreen("${AUTH_SCREEN}/login")
+    data object Login : AuthScreen("$AUTH_SCREEN/login")
 
-    data object SignUp : AuthScreen("${AUTH_SCREEN}/sign_up")
+    data object SignUp : AuthScreen("$AUTH_SCREEN/sign_up")
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.authNavGraph(
     onAuthSuccess: () -> Unit,
-    navController: NavHostController,
+    navController: NavController,
 ) {
     navigation(
         startDestination = AuthScreen.Splash.route,
         route = AUTH_SCREEN,
     ) {
-        composable(AuthScreen.Splash.route) {
-            // Splash Screen
-            SplashScreen()
-            // WelcomeScreen()
-            navController.navigate(AuthScreen.Login.route)
+        screen(AuthScreen.Splash.route) {
+            SplashScreenCustom(
+                splashViewModel = hiltViewModel(),
+                navController = navController,
+                onAuthSuccess = onAuthSuccess,
+            )
         }
 
-        composable(AuthScreen.Login.route) {
+        screen(AuthScreen.Login.route) {
             LoginScreen(
                 viewModel = hiltViewModel(),
             )
         }
 
-        composable(AuthScreen.SignUp.route) {
+        screen(AuthScreen.SignUp.route) {
         }
+
     }
 }

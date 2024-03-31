@@ -30,10 +30,15 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import info.hridoydas.lifecanvas.auth.data.AuthRepository
 import info.hridoydas.lifecanvas.auth.data.AuthRepositoryImpl
+import info.hridoydas.lifecanvas.auth.data.UserRepository
+import info.hridoydas.lifecanvas.auth.data.UserRepositoryImpl
 
 @InstallIn(ViewModelComponent::class)
 @Module
 class AuthModule {
     @Provides
     fun provideAuthRepository(impl: AuthRepositoryImpl): AuthRepository = impl
+
+    @Provides
+    fun provideUserRepository(impl: UserRepositoryImpl): UserRepository = impl
 }
