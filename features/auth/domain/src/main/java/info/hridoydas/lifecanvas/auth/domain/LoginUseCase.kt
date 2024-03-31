@@ -46,7 +46,7 @@ class LoginUseCase
             return when (val result = repository.login(request)) {
                 is NetworkResult.Error -> result.toResourceError()
                 is NetworkResult.Success -> {
-                    sessionHandler.setCurrentUser(result.result.data.id,result.result.data.authToken)
+                    sessionHandler.setCurrentUser(result.result.data.id, result.result.data.authToken)
                     Resource.Success(mapper.map(result.result.data))
                 }
             }

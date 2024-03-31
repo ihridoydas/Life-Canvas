@@ -41,9 +41,7 @@ import info.hridoydas.lifecanvas.screens.ViewScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun MainAnimationNavHost(
-    navController: NavHostController,
-) {
+fun MainAnimationNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
         startDestination = AUTH_SCREEN,
@@ -51,7 +49,6 @@ fun MainAnimationNavHost(
         authNavGraph(
             navController = navController,
             onAuthSuccess = {
-
             },
         )
 

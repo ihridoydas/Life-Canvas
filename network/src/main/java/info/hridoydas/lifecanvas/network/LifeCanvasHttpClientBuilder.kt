@@ -49,7 +49,7 @@ const val CONNECT_TIMEOUT = 5000
 const val CONNECTION_ATTEMPTS = 3
 
 class LifeCanvasHttpClientBuilder(
-    private val sessionHandler: SessionHandler
+    private val sessionHandler: SessionHandler,
 ) {
     private lateinit var protocol: URLProtocol
     private lateinit var host: String

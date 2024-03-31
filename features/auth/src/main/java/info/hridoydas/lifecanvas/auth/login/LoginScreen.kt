@@ -84,9 +84,7 @@ const val LC_SCREEN_BOTTOM_SECTION_WEIGHT = 4f
  * @see CustomButton
  */
 @Composable
-fun LoginScreen(
-    viewModel: LoginViewModel,
-) {
+fun LoginScreen(viewModel: LoginViewModel) {
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
     Login(
         onState = uiState.value,

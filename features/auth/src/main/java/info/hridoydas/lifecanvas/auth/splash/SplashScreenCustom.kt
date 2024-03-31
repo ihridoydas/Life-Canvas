@@ -59,16 +59,15 @@ fun SplashScreenCustom(
             }
         }
         is SplashUIState.Splash -> {
-            if (state.moveLogin){
+            if (state.moveLogin) {
                 LaunchedEffect(Unit) {
-                    navController.navigate(AuthScreen.Login.route){
-                        popUpTo(AuthScreen.Login.route){
+                    navController.navigate(AuthScreen.Login.route) {
+                        popUpTo(AuthScreen.Login.route) {
                             inclusive = true
                         }
                     }
                 }
-
-            }else{
+            } else {
                 Splash(state = state)
             }
         }
