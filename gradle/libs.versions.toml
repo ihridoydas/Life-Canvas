@@ -1,5 +1,5 @@
 [versions]
-androidApplication = "8.3.0"
+androidApplication = "8.3.1"
 coreSplashscreen = "1.0.1"
 kotlinAndroid = "1.9.21"
 kotlinJvm = "1.9.22"
@@ -9,19 +9,19 @@ timber = "5.0.1"
 spotless = "6.25.0"
 minSdk = "26"
 compileSdk = "34"
-gradle = "8.3.0"
+gradle = "8.3.1"
 composeBom = "2024.02.02"
 composeCompiler = "1.5.10"
 kotlinGradlePlugin = "1.9.22"
-ksp = "1.9.22-1.0.18"
+ksp = "1.9.23-1.0.19"
 gradleVersionsPlugin = "0.51.0"
 ktorClientAndroid = "2.3.5"
 ktorClientContentNegotiation = "2.3.5"
 ktorClientLogging = "2.3.5"
 ktor = "2.3.9"
-retrofit = "2.9.0"
+retrofit = "2.10.0"
 room = "2.6.1"
-protobuf = "3.25.3"
+protobuf = "4.26.0"
 
 dataStore = "1.0.0"
 composeNavigation = "2.7.7"
@@ -48,6 +48,7 @@ ktlint = "1.0.1"
 kotlinter = "4.2.0"
 dokkaVersion = '1.9.20'
 versioningPlugin = "1.9.22"
+coreKtx = "1.5.0"
 
 [libraries]
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
@@ -115,6 +116,7 @@ square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", ver
 dokkaDocumentation= {module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaVersion"}
 dokka-gradle-plugin= {module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokkaVersion"}
 versioning-plugin = { module = "org.jetbrains.dokka:versioning-plugin", version.ref = "versioningPlugin" }
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidApplication" }
