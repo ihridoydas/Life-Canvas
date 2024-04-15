@@ -2,4 +2,14 @@
 <resources>
     <string name="email">email</string>
     <string name="error_email_empty">Email cannot be empty</string>
+
+    <!--    Intro-->
+    <string name="intro_one_title">Manage your tasks</string>
+    <string name="intro_two_title">Create daily routine</string>
+    <string name="intro_three_title">Organize your tasks</string>
+
+    <string name="intro_one_description">You can easily manage all of your daily tasks in DoMe for free</string>
+    <string name="intro_two_description">In Uptodo  you can create your personalized routine to stay productive</string>
+    <string name="intro_three_description">You can organize your daily tasks by adding your tasks into separate categories</string>
+
 </resources>

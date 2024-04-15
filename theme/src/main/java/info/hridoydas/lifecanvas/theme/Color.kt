@@ -88,6 +88,11 @@ const val DARK_OUTLINE_VARIANT = 0x1F000000
 const val DARK_SCRIM = 0x33000000
 
 const val SEED = 0xFF3F51B5
+const val BG_COLOR = 0xFF1E1E1E
+const val INTRO_COLOR = 0xFF9AD0EC
+const val BUTTON_BG_COLOR = 0xFF8875FF
+const val BUTTON_SECOND_COLOR = 0xFF6F6F6F
+const val INDICATOR_COLOR = 0XFFAFAFAF
 
 val template_theme_light_primary = Color(LIGHT_PRIMARY)
 val template_theme_light_onPrimary = Color(LIGHT_ON_PRIMARY)
@@ -152,3 +157,8 @@ val template_theme_dark_outlineVariant = Color(DARK_OUTLINE_VARIANT)
 val template_theme_dark_scrim = Color(DARK_SCRIM)
 
 val seed = Color(SEED)
+val backgroundColor = Color(BG_COLOR)
+val introBackgroundColor = Color(INTRO_COLOR)
+val buttonBackgroundColor = Color(BUTTON_BG_COLOR)
+val buttonSecondColor = Color(BUTTON_SECOND_COLOR)
+val indicatorColor = Color(INDICATOR_COLOR)
