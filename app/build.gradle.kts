@@ -141,6 +141,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling)
+    implementation(libs.core.ktx)
     // Storage
     implementation(libs.datastore)
     implementation(libs.hilt.android)
@@ -169,6 +170,7 @@ dependencies {
     // Hilt
     annotationProcessor(libs.hilt.compiler)
 
+    testImplementation(libs.compose.ui.test.junit)
     testImplementation(libs.junit)
 
     androidTestImplementation(platform(libs.compose.bom))

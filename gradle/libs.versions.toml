@@ -49,6 +49,7 @@ ktlint = "1.0.1"
 kotlinter = "4.2.0"
 dokkaVersion = '1.9.20'
 versioningPlugin = "1.9.22"
+coreKtx = "1.5.0"
 
 [libraries]
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
@@ -117,6 +118,7 @@ square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", ver
 dokkaDocumentation= {module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaVersion"}
 dokka-gradle-plugin= {module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokkaVersion"}
 versioning-plugin = { module = "org.jetbrains.dokka:versioning-plugin", version.ref = "versioningPlugin" }
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidApplication" }
