@@ -1,18 +1,18 @@
 [versions]
 androidApplication = "8.3.1"
 coreSplashscreen = "1.0.1"
-kotlinAndroid = "1.9.21"
+kotlinAndroid = "1.9.23"
 kotlinJvm = "1.9.22"
-kotlinSerialization = "1.9.22"
+kotlinSerialization = "1.9.23"
 protobufGradlePlugin = "0.9.4"
 timber = "5.0.1"
 spotless = "6.25.0"
 minSdk = "26"
 compileSdk = "34"
 gradle = "8.3.1"
-composeBom = "2024.02.02"
-composeCompiler = "1.5.10"
-kotlinGradlePlugin = "1.9.22"
+composeBom = "2024.03.00"
+composeCompiler = "1.5.11"
+kotlinGradlePlugin = "1.9.23"
 ksp = "1.9.23-1.0.19"
 gradleVersionsPlugin = "0.51.0"
 ktorClientAndroid = "2.3.5"
@@ -30,6 +30,7 @@ kotlinCoroutines = "1.8.0"
 accompanist = "0.34.0"
 activityCompose = "1.8.2"
 appCompat = "1.6.1"
+composeRuntime = "1.6.1"
 composeConstraintLayout = "1.0.1"
 ktxCore = "1.12.0"
 material = "1.11.0"
@@ -97,6 +98,7 @@ androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "ktxCore" }
 android-material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "androidx.compose.runtime:runtime", version.ref = "composeRuntime" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
