@@ -1,0 +1,18 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen////PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WC_SCREEN_BOTTOM_SECTION_WEIGHT/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/-w-c_-s-c-r-e-e-n_-b-o-t-t-o-m_-s-e-c-t-i-o-n_-w-e-i-g-h-t.html
+$dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WC_SCREEN_TOP_SECTION_WEIGHT/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/-w-c_-s-c-r-e-e-n_-t-o-p_-s-e-c-t-i-o-n_-w-e-i-g-h-t.html
+$dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WelcomeScreen/#androidx.compose.ui.Modifier/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/-welcome-screen.html
+$dokka.location:info.hridoydas.lifecanvas.auth.welcomeScreen//WelcomeScreenPreview/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth.welcomeScreen/-welcome-screen-preview.html
+$dokka.location:info.hridoydas.lifecanvas.auth////PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth//AUTH_SCREEN/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-a-u-t-h_-s-c-r-e-e-n.html
+$dokka.location:info.hridoydas.lifecanvas.auth//authNavGraph/androidx.navigation.NavGraphBuilder#kotlin.Function0[kotlin.Unit]#androidx.navigation.NavController/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/auth-nav-graph.html
+$dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.Login///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-login/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.SignUp///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-sign-up/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen.Splash///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/-splash/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen///PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/index.html
+$dokka.location:info.hridoydas.lifecanvas.auth/AuthScreen/route/#/PointingToDeclaration/auth/info.hridoydas.lifecanvas.auth/-auth-screen/route.html
+info.hridoydas.lifecanvas.auth
+info.hridoydas.lifecanvas.auth.welcomeScreen
+
