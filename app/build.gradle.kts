@@ -100,7 +100,8 @@ android {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
-            buildConfigField("String", "Template_HOST", "\"192.168.10.34\"")
+//            buildConfigField("String", "Template_HOST", "\"192.168.10.34\"")
+            buildConfigField("String", "Template_HOST", "\"localHost\"")
         }
         getByName("release") {
             isMinifyEnabled = true
