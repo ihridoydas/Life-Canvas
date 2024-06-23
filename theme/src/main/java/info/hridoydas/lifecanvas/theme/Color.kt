@@ -93,6 +93,8 @@ const val INTRO_COLOR = 0xFF9AD0EC
 const val BUTTON_BG_COLOR = 0xFF8875FF
 const val BUTTON_SECOND_COLOR = 0xFF6F6F6F
 const val INDICATOR_COLOR = 0XFFAFAFAF
+const val TEXT_FIELD_BORDER_COLOR = 0xFF979797
+const val TEXT_FIELD_CONTAINER_COLOR = 0xFF1D1D1D
 
 val template_theme_light_primary = Color(LIGHT_PRIMARY)
 val template_theme_light_onPrimary = Color(LIGHT_ON_PRIMARY)
